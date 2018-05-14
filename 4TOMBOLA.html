@@ -1,0 +1,33 @@
+<html>
+   <head>
+      <title>
+         TOMBOLA ONLINE
+      </title>
+      <script language="javascript">
+         window.onload = tombola;
+         function tombola()
+         {
+            var numerorandom = Math.round(Math.random()*100-1);
+            console.log(numerorandom);
+            var contador = 0
+            do{
+                var contador = contador + 1;
+                var numero = prompt("Dime un numero");
+                    if (numero == numerorandom){
+                    alert ("has ganado veintiochomil millones de euros campeon");
+                }
+                    else if (numero > numerorandom){
+                    alert ("QUE EL NUMERO ES MAS PEQUEÑO INCOMPETENTE");
+                }
+                    else if (numero < numerorandom){
+                    alert ("QUE EL NUMERO ES MAS GRANDE INCOMPETENTE");
+                }
+            }
+            while (contador <= 5 && numero != numerorandom)
+            alert ("SE ACABO EL JUEGO");
+         }
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

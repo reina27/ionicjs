@@ -1,0 +1,61 @@
+<html>
+   <head>
+      <title>
+         WEB CON JS
+      </title>
+      <script language="javascript">
+         function calcularImc()
+         {
+             var peso = document.getElementById("peso").value;
+             console.log (peso);
+             var altura = document.getElementById("altura").value;
+             console.log (altura);
+             var operacion = peso/(altura*altura);
+
+             if (operacion<16){
+                alert ("Estas desnutrido");
+                document.getElementById("img1").style.display = "block";
+                document.getElementById("img2").style.display = "none";
+                document.getElementById("img3").style.display = "none";
+                document.getElementById("img4").style.display = "none";
+            }    
+            else if (operacion>=16 && operacion<18){ 
+                alert ("Estas delgado");
+                document.getElementById("img1").style.display = "block";
+                document.getElementById("img2").style.display = "none";
+                document.getElementById("img3").style.display = "none";
+                document.getElementById("img4").style.display = "none";
+            }
+            else if (operacion>=18 && operacion<25){ 
+                alert ("Estas ideal");
+                document.getElementById("img2").style.display = "block";
+                document.getElementById("img1").style.display = "none";
+                document.getElementById("img3").style.display = "none";
+                document.getElementById("img4").style.display = "none";
+            }
+            else if (operacion>=25 && operacion<31){ 
+                alert ("Estas en sobrepeso");
+                document.getElementById("img3").style.display = "block";
+                document.getElementById("img2").style.display = "none";
+                document.getElementById("img1").style.display = "none";
+                document.getElementById("img4").style.display = "none";
+            }
+            else if (operacion>31){ 
+                alert ("Estas obeso"); 
+                document.getElementById("img4").style.display = "block"; 
+                document.getElementById("img2").style.display = "none";
+                document.getElementById("img3").style.display = "none";
+                document.getElementById("img1").style.display = "none";
+            }}
+      </script>
+   </head>
+   <body>
+       <label for="peso">Peso</label><input type="number" name="peso" id="peso"><br>
+       <label for="altura">Altura</label><input type="number" name="altura" id="altura"><br>
+       <button onclick="calcularImc()">¿Como estas de bien?</button>
+       <img id="img1" src="img/peso1.jpg" style="display:none;" width="200px" height="200px"/>
+       <img id="img2" src="img/peso2.jpg" style="display:none;" width="200px" height="200px"/>
+       <img id="img3" src="img/peso3.jpg" style="display:none;" width="200px" height="200px"/>
+       <img id="img4" src="img/peso4.jpg" style="display:none;" width="200px" height="200px"/>
+   </body>
+</html>
