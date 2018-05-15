@@ -1,0 +1,12 @@
+#contenedor{
+    width:408px;
+    height:408px;
+    float:left;
+    border:2px solid red;
+}
+.divsfotos{
+    width:200px;
+    height:200px;
+    border:2px solid red;
+    float:left;
+    visibility:;

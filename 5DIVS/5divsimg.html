@@ -1,0 +1,70 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script type="text/javascript">
+
+        onload = inicia;
+
+        /*---   funcion que se inicia sola cuando carga la página e inicia las demás  --*/
+
+        function inicia() {
+                var tablero = document.querySelectorAll("div");
+                        for (var i = 0; i < tablero.length; i++) {
+                tablero[i].addEventListener('click', ocultaMuestra);
+                }
+        }
+        /*---   funcion que oculta y muestra los divs  --*/
+
+        function ocultaMuestra(evento) {
+
+        /*---   target, es el div que toco, currentTarget, es el elemento contenedor  --*/
+
+                var clickdiv = evento.currentTarget.firstElementChild;
+                var estilo = clickdiv.style.visibility;
+                        if (estilo == 'visible' || estilo == '') {
+                         clickdiv.style.visibility = 'hidden';
+                        }
+                        else {
+                         clickdiv.style.visibility = 'visible';
+                        }
+        }
+
+        /*---   funcion que cuenta los clicks  --*/
+
+        function contadorGiros(){
+                var imagenesgiradas = 0;
+                if (tablero.click){
+                        imagenesgiradas + 1
+                }
+        }
+        function gameOver(){
+                if (imagenesgiradas = 2){
+                        alert("HAS AGOTADO LAS OOPORTUNIDADES")
+                }
+        }
+    </script>
+    </head>
+
+    <body>
+        <! ESTOS SON LOS DIVS CON FOTOS, EL SPAN ES EL CONTENEDOR DE TODAS >
+        <span id="contenedor">
+                
+                        <div class="divsfotos">
+                                <img style="visibility: hidden;" src="img/nike.png" />
+                        </div>
+                        <div class="divsfotos">
+                                <img style="visibility: hidden;" src="img/adidas.png" />
+                        </div>
+               
+                
+                        <div class="divsfotos">
+                                <img style="visibility: hidden;" src="img/adidas.png" />
+                        </div>
+                        <div class="divsfotos">
+                                <img style="visibility: hidden;" src="img/nike.png" />
+                        </div>
+                
+                </span>            
+    </body>
+</html>
