@@ -1,0 +1,32 @@
+<html>
+   <head>
+      <title>
+         FORMULARIO
+      </title>
+      <script language="javascript">
+          //Metodo Encode
+function codificarEntidad(str) {
+  var array = [];
+  for (var i=str.length-1;i>=0;i--) {
+    array.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
+  }
+  return array.join('');
+}
+//Metodo Decode
+function descodificarEntidad(str) {
+  return str.replace(/&#(\d+);/g, function(match, dec) {
+    return String.fromCharCode(dec);
+  });
+}          
+      </script>
+   </head>
+   <body>
+    <form action="/my-handling-form-page" method="post">
+        <div>
+            <textarea for="palabra" id="palabra" >Palabra:</textarea>  
+            <input onclick="codificarEntidad()" for="submit" type="button" id="codificar" >codificar</input>
+            <input onclick="descodificarEntidad()" for="submit" type="button" id="descodificar" >descodificar</input>
+        </div>
+    </form>
+   </body>
+</html>

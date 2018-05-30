@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ITUNES</title>
+    <script>
+        var cancion = document.getElementById("cancionintroducida");
+        var xmlHttp = new XMLHttpRequest();
+        var DIR_SERV = "https://itunes.apple.com/search?term=" + cancion + "&media=music&limit=20";
+        console.log (DIR_SERV);
+          function cogerCancion ()
+          {
+            xmlHttp.open('GET', DIR_SERV, true);
+            console.log ();
+          }
+
+
+    </script>
+</head>
+
+<body>
+    <textarea name="texto_original" id="cancionintroducida" cols="40" rows="20"></textarea>
+    <button onclick="cogerCancion()">Codificar </button>
+</body>
+
+</html>
